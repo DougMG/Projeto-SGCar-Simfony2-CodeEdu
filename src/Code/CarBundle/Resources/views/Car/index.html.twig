@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SisGerCar|Lista de Automóveis</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h2 style="text-align:center;">Lista de Automóveis - Por Marca e Modelo</h2>
+        <hr />
+        <ul>
+
+            {% for marca, stringsById in resultados %}
+                    <li style="color:orange; font-weight:bolder;">{{ marca }}:<br />
+
+                            <ul>
+                                {% for modelo in stringsById %}
+                                        <li style="color:#000;">{{ modelo }} </li>
+                                {% endfor %}
+                                <br/ >
+                            </ul>
+                    </li>
+
+            {% endfor %}
+        </ul>
+        <hr />
+    </body>
+</html>
