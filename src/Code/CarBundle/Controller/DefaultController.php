@@ -9,11 +9,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
-     * @Template()
+     * @Route("/run/{marca}/{modelo}", name="pag-fase01")
+     * @Template("CodeCarsBundle:Default:index.html.twig")
      */
-    public function indexAction($name)
+    public function indexAction($marca, $modelo)
     {
-        return array('name' => $name);
+        //$modelo = "X3";
+        //$marca = "BMW";
+        return $this->render('CodeCarBundle:Default:index.html.twig', ['marca' => $marca, 'modelo'=>$modelo]);
     }
 }

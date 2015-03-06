@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class CarController extends Controller
 {
     /**
-     * @Route(name="index.html.twig")
+     * @Route("/", name="index_cars")
      * @Template("CodeCarBundle:Car:index.html.twig")
      */
     public function indexAction()

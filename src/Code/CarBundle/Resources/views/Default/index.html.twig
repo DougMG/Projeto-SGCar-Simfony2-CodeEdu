@@ -1,1 +1,96 @@
-Hello {{ name }}!
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>SisGerCar|Proj. 01</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div#content{
+                height: 500px;
+            }
+            header h1{
+                text-align: center;
+                border-bottom: 2px solid orange;
+                padding-bottom: 15px;
+
+            }
+
+            article p{
+                font-weight: bolder;
+            }
+            article p#desc{
+                width: 182px;
+                padding: 5px;
+                font-size: 11px;
+                color: #cecece;
+                border: 1px solid #000;
+            }
+            article table{
+                width: 400px;
+                font-weight: bolder;
+                border: 1px solid #cecece;
+
+            }
+            article table th{
+                background-color: #cecece;
+            }
+            article table td, th{
+                border: 1px solid #cecece;
+                padding:  5px 0;
+                text-align: center;
+            }
+            footer p{
+                border-top: 2px solid #FFA500;
+            }
+            footer nav a{
+                width: 135px;
+                display: block;
+                border:1px solid #000;
+                padding: 4px;
+                background-color: #cecece;
+                text-decoration: none;
+            }
+            footer nav a:link{
+                color: #ff0000;
+            }
+            footer  nav  a:visited{
+                color: #1F04aF;
+            }
+            footer nav a:hover{
+                color: ##FFA500;
+            }
+            footer nav a:active {
+                color: #0000FF;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <header>
+                <h1>Projeto Fase 01: Configurando o Ambiente</h1>
+            </header>
+            <article>
+                <p id="desc">Digite uma marca e um modelo na url:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{marca}}</td>
+                            <td>{{modelo}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+        <footer>
+                <p></p>
+                <nav>
+                    <a href="/">voltar a página incial</a>
+                </nav>
+        </footer>
+    </body>
+</html>

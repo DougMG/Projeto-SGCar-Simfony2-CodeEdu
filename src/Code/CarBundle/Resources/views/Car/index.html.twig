@@ -3,18 +3,62 @@
     <head>
         <title>SisGerCar|Lista de Automóveis</title>
         <meta charset="utf-8">
+        <style type="text/css">
+
+            div#content{
+                height: 510px;
+            }
+            div#content ul li{
+                color:#FFA500; font-weight:bolder; text-decoration: underline;
+            }
+            div#content ul li#two{
+                color: #afafaf; padding: 2px;
+            }
+            header h1{
+                text-align: center;
+                border-bottom: 2px solid #FFA500;
+                padding-bottom: 15px;
+
+            }
+            footer p{
+                border-top: 2px solid #FFA500;
+            }
+            footer nav a{
+                width: 135px;
+                display: block;
+                border:1px solid #000;
+                padding: 4px;
+                background-color: #cecece;
+                text-decoration: none;
+            }
+
+            footer nav a:link{
+                color: #ff0000;
+            }
+            footer nav  a:visited{
+                color: #1F04aF;
+            }
+            footer nav a:hover{
+                color: #FFA500;
+            }
+            footer nav a:active {
+                color: #0000FF;
+            }
+        </style>
     </head>
     <body>
-        <h2 style="text-align:center;">Lista de Automóveis - Por Marca e Modelo</h2>
-        <hr />
+        <div id="content">
+        <header>
+            <h1>Lista de Automóveis - Por Marca e Modelo</h1>
+        </header>
         <ul>
 
             {% for marca, stringsById in resultados %}
-                    <li style="color:orange; font-weight:bolder;">{{ marca }}:<br />
+                    <li>{{ marca }}:<br />
 
                             <ul>
                                 {% for modelo in stringsById %}
-                                        <li style="color:#000;">{{ modelo }} </li>
+                                        <li id="two">{{ modelo }} </li>
                                 {% endfor %}
                                 <br/ >
                             </ul>
@@ -22,6 +66,12 @@
 
             {% endfor %}
         </ul>
-        <hr />
+        </div>
+        <footer>
+            <p></p>
+                <nav>
+                    <a href="/">voltar a página incial</a>
+                </nav>
+        </footer>
     </body>
 </html>

@@ -8,12 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/run/{marca}/{modelo}", name="homepage")
+     * @Route(name="homepage")
      */
-    public function indexAction($marca, $modelo)
+    public function indexAction()
     {
         #$marca = "BMW";
         #$modelo = "x3";
-        return $this->render('AppBundle:default:index.html.twig', ["marca"=>$marca, "modelo"=>$modelo]);
+        //return $this->render('AppBundle:default:index.html.twig', ["marca"=>$marca, "modelo"=>$modelo]);
+        return  $this->render('AppBundle:default:index.html.twig');
     }
 }

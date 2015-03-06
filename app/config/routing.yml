@@ -6,3 +6,4 @@ code_car:
 app:
     resource: @AppBundle/Controller/
     type:     annotation
+
