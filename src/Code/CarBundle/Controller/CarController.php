@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Code\CarBundle\Entity\Carro;
+use Code\CarBundle\Entity\Fabricante;
 
 class CarController extends Controller
 {
@@ -43,7 +44,7 @@ class CarController extends Controller
     {
         $carro = new Carro;
         $carro->setModelo("Model 03");
-        $carro->setFabricante("Fabricante 03");
+        $carro->setFabricante(NULL);
         $carro->setAno(2004);
         $carro->setCor("Branco");
 
@@ -56,5 +57,48 @@ class CarController extends Controller
         $carros = $repository->findAll();
 
         return $this->render('CodeCarBundle:Car:doctrine.html.twig', ['carros'=>$carros]);
+    }
+
+    // 4ª Etapa do Projeto - Gerenciamento de Carros
+    /**
+    * @Route("/mapping", name="mapping_fabricante_carros")
+    * @Template("CodeCarBundle:Car:mapping.html.twig")
+    */
+    public function mappingAction(){
+
+        /*$fab = new Fabricante;
+        $fab->setNome("Chevrolet");
+
+        $car1 = new Carro;
+        $car1->setModelo("Corsa");
+        $car1->setFabricante($fab);
+        $car1->setAno(2015);
+        $car1->setCor("Vermelho");
+
+        $car2 = new Carro;
+        $car2->setModelo("Prisma");
+        $car2->setFabricante($fab);
+        $car2->setAno(2015);
+        $car2->setCor("Branco");
+
+        $car3 = new Carro;
+        $car3->setModelo("Cobalt");
+        $car3->setFabricante($fab);
+        $car3->setAno(2015);
+        $car3->setCor("Preto");*/
+
+        $manager = $this->getDoctrine()->getEntityManager();
+        /*$manager->persist($fab);
+        $manager->persist($car1);
+        $manager->persist($car2);
+        $manager->persist($car3);
+        //$manager->flush();
+
+        $repository = $manager->getRepository("CodeCarBundle:Fabricante");
+        $carros = $repository->find(1);*/
+        $repository = $manager->getRepository("CodeCarBundle:Fabricante");
+        $fabricante = $repository->find(3);
+
+        return $this->render('CodeCarBundle:Car:mapping.html.twig', ['fabricante'=>$fabricante]);
     }
 }
