@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+{% block title %}SisGerCar | Doctrine - Lista de Automóveis {% endblock %}
+{% block body %}
+	{% block content %}
+         <h1 style="color:#336699;" class="page-header text-center">Lista de Carros Por Fabricante | Fabricante Por Carro - Fase 04</h1>
+        <div class="container"> 
+			<h1 class="page-header">Carros Por Fabricantes</h1>
+			<ul>
+			{% for carro in carros%}
+				<li><strong>Fabricante: </strong><span class="label label-default">{{carro.fabricante.nome}}</span>
+					<ul class="list-group">
+					{% for carro in carro.fabricante.carros %}
+						<li class="list-group-item"><strong>Modelo: </strong><em>{{carro.modelo}}</em></li>
+					{% endfor %}
+					</ul>
+				</li>
+			{% endfor %}
+			</ul>
+			<h1 class="page-header">Fabricantes Por Carros</h1>
+			<div class="container">
+				<ul class="list-group">
+				{% for carro in carros %}
+						
+							<li class="list-group-item"><b>Modelo:</b> {{carro.modelo}},
+								<b>Ano:</b> {{carro.ano}}, <b>Cor:</b> {{carro.cor}} -> ( <strong>Fabricante:</strong> <em class="label label-default">{{carro.fabricante.nome}}</em> )
+							</li>
+				{% endfor %}
+				</ul>
+			</div>	
+		</div>	
+	{% endblock %}	
+	{% block footer %}
+		<div class="container" style="padding:50px 25px;">
+				
+                    <a class="btn btn-default" href="{{ path('homepage') }}">voltar a página inicial</a>
+                
+        </div>            
+    {% endblock %}
+{% endblock%}

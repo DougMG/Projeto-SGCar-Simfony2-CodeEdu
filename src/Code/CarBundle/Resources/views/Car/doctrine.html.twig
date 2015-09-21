@@ -10,14 +10,14 @@
     {% block content %}
          <h1 style="color:#336699; text-align:center; border-bottom:3px solid #000; padding-bottom:3px;">Lista de Automóveis - Fase 03</h1>
         {% for carro in carros %}
-            <li><b>{{carro.fabricante}}</b><br></li>
+            {#<li><b>{{carro.fabricante}}</b><br></li>#}
             <li>{{carro.modelo}}</li>
             <li>{{carro.ano}}</li>
             <li>{{carro.cor}}</li><br><br>
         {% endfor %}
     {% endblock %}
     {% block footer %}
-                    <a href="/" style=" border-top:3px solid #000; padding-top:3px; display:block;">voltar a página incial</a>
+                    <a href="{{ path('homepage') }}" style=" border-top:3px solid #000; padding-top:3px; display:block;">voltar a página incial</a>
 
     {% endblock %}
 {% endblock %}

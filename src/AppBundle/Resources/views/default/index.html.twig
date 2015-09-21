@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
+{% extends '::base.html.twig' %}
+{% block title %}SisGerCar{% endblock %}
+    {% block head %}
     <head>
-        <title>SisGerCar</title>
         <meta charset="utf-8">
         <style type="text/css">
             div#content{
@@ -32,21 +32,30 @@
                 border-bottom: 2px solid #FFA500;
             }
         </style>
-    </head>
-    <body>
-        <div id="content">
-            <header>
-                    <h1>Projeto: Gerenciamento de Carros</h1>
+    </head>    
+    {% endblock %}
+    {% block body %}
+        <div class="page-header">
+            <header class="container">
+                    <h1 class="color-white">Projeto: Gerenciamento de Carros</h1>
             </header>
-            <nav>
-                <a href="/cars/run/BMW/X3">Projeto Fase 01: Configurando Ambiente</a>
-                <a href="/cars/">Projeto Fase 02: Criando Bundle - Listagem de Automóveis</a>
-                <a href="/cars/doctrine">Projeto Fase 03: Criando Entidades - Listagem de Automóveis</a>
-                <a href="/cars/mapping">Projeto Fase 04: Relacionando Entidades - Listagem de Automóveis por Fabricante | Fabricante por carro</a>
+        </div>    
+        <div class="jumbotron">
+            <nav class="container nav">
+                <ul class="list-unstyled">
+                    <li><span class="label label-default">Projeto Fase 01:</span> <a href="/cars/run/BMW/X3" class="display">Configurando Ambiente</a></li>
+                    <li><span class="label label-default">Projeto Fase 02:</span> <a href="{{ path('index_cars') }}">Criando Bundle - Listagem de Automóveis</a></li>
+                    <li><span class="label label-default">Projeto Fase 03:</span> <a href="{{ path('doctrine_cars') }}">Criando Entidades - Listagem de Automóveis</a></li>
+                    <li><span class="label label-default">Projeto Fase 04:</span> <a href="{{ path('mapping_fabricante_carros') }}">Relacionando Entidades - Listagem de Automóveis por Fabricante | Fabricante por carro</a></li>  
+                    <li><span class="label label-default">Projeto Fase 05:</span> <a href="{{ path('fabricantes_lista') }}">Criando Form e Listagem</a></li>  
+                </ul>
+                
             </nav>
-       </div>
-       <footer>
-           <p></p>
-       </footer>
-    </body>
-</html>
+        </div>
+        {% block footer %}
+            <footer class="page-header">
+               <p></p>
+            </footer>
+        {% endblock%}
+    {% endblock %}
+
