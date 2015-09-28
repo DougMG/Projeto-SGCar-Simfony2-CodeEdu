@@ -1,4 +1,5 @@
 {% extends '::base.html.twig' %}
+{% block title %} Lista de Fabricantes {% endblock %}
 {% block body %}
 	<div class="container">
 		<h2 class="page-header">Lista de Fabricantes</h2>
@@ -12,6 +13,7 @@
 					<th>Id</th>
 					<th>Nome</th>
 					<th>Carros</th>
+					<th>Ação</th>
 				</tr>
 				{% for fabricante in fabricantes%}
 					<tr>
@@ -24,6 +26,8 @@
 								{% endfor %}
 							</ul>
 						</td>
+						<td><a class="btn btn-success" href="{{ path('fabricante_edit', {'id':fabricante.id}) }}">Editar</a>
+						<a class="btn btn-danger" href="{{ path('fabricante_delete', {'id':fabricante.id}) }}">Deletar</a></td>
 					</tr>
 				{% endfor %}
 			</table>

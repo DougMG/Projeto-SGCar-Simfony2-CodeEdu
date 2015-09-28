@@ -8,7 +8,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 class FabricanteType extends AbstractType
 {
 	public function buildForm(FormBuilderInterface $builder, array $options){
-		$builder->add('nome', 'text');
+		$builder
+		->add('nome', 'text')
+		;
 	}
 
 	public function setDefaultOptions(OptionsResolverInterface $resolver){

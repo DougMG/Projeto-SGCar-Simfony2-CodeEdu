@@ -82,5 +82,9 @@ class Carro{
         $this->cor = $cor;
     }
 
+    /*public function __toString(){
+        return $this->getModelo();
+    }*/
+
 }
 ?>
